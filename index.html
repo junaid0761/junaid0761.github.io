@@ -8,6 +8,12 @@
 
   <meta name="description"
         content="Personal portfolio of Junaid Ahmed — BCA student, developer and cybersecurity enthusiast.">
+  <meta name="theme-color" content="#07111f">
+  <meta property="og:title" content="Junaid Ahmed | Portfolio & Personal Journey">
+  <meta property="og:description" content="Projects, skills, education, certificates and personal journey of Junaid Ahmed.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://junaid0761.github.io/My-WON-Website/">
+  <meta property="og:image" content="profile.jpg">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -945,10 +951,40 @@ footer{
 
 }
 
+
+/* =========================================================
+   V2 ENHANCEMENTS
+========================================================= */
+#scrollProgress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:2000;box-shadow:0 0 14px rgba(53,214,255,.55)}
+#particles{position:fixed;inset:0;pointer-events:none;z-index:-2;opacity:.55}
+.hero-content{animation:heroEnter .9s ease both}
+.profile-wrapper{animation:floatProfile 5s ease-in-out infinite}
+.profile-card{transition:transform .35s ease,box-shadow .35s ease;cursor:zoom-in}
+.profile-card:hover{transform:perspective(900px) rotateY(-3deg) rotateX(2deg) translateY(-5px);box-shadow:0 28px 70px rgba(0,0,0,.45)}
+@keyframes heroEnter{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes floatProfile{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.typing{color:var(--accent);position:relative;white-space:nowrap}.typing::after{content:"";display:inline-block;width:2px;height:1em;background:var(--accent);margin-left:5px;vertical-align:-2px;animation:blink .8s infinite}@keyframes blink{50%{opacity:0}}
+.skill-card,.project-card,.life-card,.timeline-content,.certificate-card{position:relative;overflow:hidden}
+.skill-card::before,.project-card::before,.life-card::before,.certificate-card::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.05),transparent 70%);transform:translateX(-120%);transition:.7s;pointer-events:none}.skill-card:hover::before,.project-card:hover::before,.life-card:hover::before,.certificate-card:hover::before{transform:translateX(120%)}
+.gallery-item{position:relative;overflow:hidden;padding:0;cursor:zoom-in;transition:.3s;border-style:solid}
+.gallery-item img{width:100%;height:100%;min-height:220px;object-fit:cover;display:block;transition:transform .5s ease,filter .5s ease}
+.gallery-item:hover{transform:translateY(-5px);border-color:rgba(53,214,255,.45);box-shadow:var(--shadow)}
+.gallery-item:hover img{transform:scale(1.07);filter:brightness(.82)}
+.gallery-item span{position:absolute;left:14px;bottom:14px;background:rgba(7,17,31,.82);backdrop-filter:blur(10px);padding:7px 12px;border-radius:9px;color:#fff;font-size:.8rem;border:1px solid rgba(255,255,255,.1)}
+.certificate-img{width:100%;height:170px;object-fit:cover;border-radius:12px;margin-bottom:16px;cursor:zoom-in;transition:.35s}.certificate-img:hover{transform:scale(1.025)}
+.lightbox{position:fixed;inset:0;background:rgba(2,8,16,.94);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;z-index:5000;padding:30px}.lightbox.open{display:flex;animation:fadeIn .25s ease}.lightbox img{max-width:min(1100px,92vw);max-height:86vh;border-radius:14px;box-shadow:0 30px 90px rgba(0,0,0,.65)}.lightbox-close,.lightbox-nav{position:absolute;border:1px solid rgba(255,255,255,.15);background:rgba(12,25,42,.8);color:#fff;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:1.2rem;display:grid;place-items:center}.lightbox-close{top:22px;right:25px}.lightbox-prev{left:25px}.lightbox-next{right:25px}.lightbox-caption{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);background:rgba(7,17,31,.8);padding:8px 14px;border-radius:10px;color:#dbe7f7;font-size:.85rem}@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+#backToTop{position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:12px;border:1px solid var(--border);background:rgba(11,23,40,.88);backdrop-filter:blur(12px);color:var(--accent);display:grid;place-items:center;cursor:pointer;z-index:1200;opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s}#backToTop.show{opacity:1;visibility:visible;transform:none}#backToTop:hover{background:var(--accent);color:#04101b;transform:translateY(-3px)}
+.nav-links a{position:relative}.nav-links a::after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:2px;background:var(--accent);transition:.25s}.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+::selection{background:var(--accent);color:#04101b}
+@media(max-width:720px){.lightbox-nav{width:42px;height:42px}.lightbox-prev{left:8px}.lightbox-next{right:8px}.nav-links a::after{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
 </style>
 </head>
 
 <body>
+<div id="scrollProgress"></div>
+<canvas id="particles" aria-hidden="true"></canvas>
 
 
 <!-- =======================================================
@@ -1004,7 +1040,7 @@ footer{
       </h1>
 
       <h2>
-        BCA Student • Developer • Cybersecurity Enthusiast
+        <span class="typing" id="typingText">BCA Student</span>
       </h2>
 
       <p class="hero-description">
@@ -1080,7 +1116,7 @@ footer{
             -->
 
             <img src="profile.jpg"
-                 alt="Junaid Ahmed">
+                 alt="Junaid Ahmed" class="zoomable" data-caption="Junaid Ahmed">
 
           </div>
 
@@ -1760,7 +1796,7 @@ footer{
 
   <img src="certificate1.jpg"
        alt="Certificate"
-       class="certificate-img">
+       class="certificate-img zoomable" data-caption="Cybersecurity Certificate">
 
   <h3>Cybersecurity Certificate</h3>
 
@@ -1912,17 +1948,17 @@ footer{
 
 
       <div class="gallery-item reveal">
-         <img src="gallery1.jpg" alt="Project Moment">
+         <img src="gallery1.jpg" alt="Bike Riding" class="zoomable" data-caption="Bike Riding">
         <span>Bike Riding</span>
     </div>
 
 
      <div class="gallery-item reveal">
-        <img src="gallery2.jpg" alt="Project Moment">
+        <img src="gallery2.jpg" alt="Shillong Trip" class="zoomable" data-caption="Shillong Trip">
         <span>Shillong Trip</span>
     </div>
     <div class="gallery-item reveal">
-        <img src="gallery3.jpg" alt="Personal Memory">
+        <img src="gallery3.jpg" alt="Personal Memory" class="zoomable" data-caption="Personal Memory">
         <span>Personal Memory</span>
     </div>
 
@@ -2016,6 +2052,15 @@ footer{
 
 </section>
 
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+  <img id="lightboxImage" src="" alt="Expanded view">
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+<button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
 <!-- =======================================================
      FOOTER
@@ -2171,6 +2216,74 @@ window.addEventListener("scroll", () => {
   });
 
 });
+
+
+/* =========================
+   Portfolio V2 Enhancements
+========================= */
+const progressBar = document.getElementById("scrollProgress");
+const backToTop = document.getElementById("backToTop");
+window.addEventListener("scroll", () => {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
+  backToTop.classList.toggle("show", window.scrollY > 500);
+});
+backToTop.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
+
+const roles = ["BCA Student", "Developer", "Cybersecurity Enthusiast", "Web Explorer", "Always Learning"];
+const typingText = document.getElementById("typingText");
+let roleIndex = 0, charIndex = 0, deleting = false;
+function typeRole(){
+  const role = roles[roleIndex];
+  typingText.textContent = deleting ? role.slice(0, --charIndex) : role.slice(0, ++charIndex);
+  let delay = deleting ? 45 : 80;
+  if(!deleting && charIndex === role.length){ deleting = true; delay = 1200; }
+  else if(deleting && charIndex === 0){ deleting = false; roleIndex = (roleIndex + 1) % roles.length; delay = 300; }
+  setTimeout(typeRole, delay);
+}
+typeRole();
+
+const zoomables = [...document.querySelectorAll(".zoomable, .gallery-item img")];
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxCaption = document.getElementById("lightboxCaption");
+let currentImage = 0;
+function showImage(index){
+  currentImage = (index + zoomables.length) % zoomables.length;
+  const img = zoomables[currentImage];
+  lightboxImage.src = img.src;
+  lightboxCaption.textContent = img.dataset.caption || img.alt || "";
+}
+function openLightbox(index){ showImage(index); lightbox.classList.add("open"); lightbox.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden"; }
+function closeLightbox(){ lightbox.classList.remove("open"); lightbox.setAttribute("aria-hidden","true"); document.body.style.overflow=""; }
+zoomables.forEach((img,index) => img.addEventListener("click", () => openLightbox(index)));
+document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+document.getElementById("lightboxPrev").addEventListener("click", () => showImage(currentImage-1));
+document.getElementById("lightboxNext").addEventListener("click", () => showImage(currentImage+1));
+lightbox.addEventListener("click", e => { if(e.target === lightbox) closeLightbox(); });
+document.addEventListener("keydown", e => {
+  if(!lightbox.classList.contains("open")) return;
+  if(e.key === "Escape") closeLightbox();
+  if(e.key === "ArrowLeft") showImage(currentImage-1);
+  if(e.key === "ArrowRight") showImage(currentImage+1);
+});
+
+// Lightweight animated background particles.
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+let dots = [];
+function resizeCanvas(){
+  canvas.width = innerWidth * devicePixelRatio; canvas.height = innerHeight * devicePixelRatio;
+  canvas.style.width = innerWidth + "px"; canvas.style.height = innerHeight + "px";
+  ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+  dots = Array.from({length: Math.min(55, Math.floor(innerWidth/22))}, () => ({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.5+.4,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18}));
+}
+function animateDots(){
+  ctx.clearRect(0,0,innerWidth,innerHeight); ctx.fillStyle="rgba(120,220,255,.35)";
+  dots.forEach(d=>{d.x+=d.vx;d.y+=d.vy;if(d.x<0||d.x>innerWidth)d.vx*=-1;if(d.y<0||d.y>innerHeight)d.vy*=-1;ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();});
+  requestAnimationFrame(animateDots);
+}
+resizeCanvas(); animateDots(); window.addEventListener("resize", resizeCanvas);
 
 </script>
 
