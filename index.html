@@ -1103,6 +1103,61 @@ body.light .now-section{background:#e9f2f9}
   .custom-cursor{display:none}
 }
 
+/* ===============================
+   MOBILE PROFILE FIX
+================================ */
+
+@media (max-width: 768px){
+
+    .hero-right{
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        transform:none !important;
+        margin-top:20px;
+    }
+
+    .profile-wrapper{
+        width:300px !important;
+        height:300px !important;
+        min-width:300px;
+        min-height:300px;
+        max-width:300px;
+        max-height:300px;
+        aspect-ratio:1 / 1;
+    }
+
+    .profile-card{
+        width:300px !important;
+        height:300px !important;
+        border-radius:50% !important;
+        padding:9px;
+    }
+
+    .profile-inner{
+        width:100% !important;
+        height:100% !important;
+        aspect-ratio:1 / 1;
+        border-radius:50% !important;
+        overflow:hidden;
+    }
+
+    .profile-inner img{
+        width:100% !important;
+        height:100% !important;
+        aspect-ratio:1 / 1;
+        object-fit:cover;
+        border-radius:50% !important;
+    }
+
+    .status-card{
+        left:50%;
+        bottom:-25px;
+        transform:translateX(-50%);
+        white-space:nowrap;
+    }
+}
 </style>
 
   <!-- Portfolio V3: richer sharing + browser integration -->
@@ -1110,7 +1165,7 @@ body.light .now-section{background:#e9f2f9}
   <meta property="og:type" content="website">
   <meta property="og:title" content="Junaid Ahmed | Portfolio & Personal Journey">
   <meta property="og:description" content="Developer portfolio, projects, skills, certificates and personal journey of Junaid Ahmed.">
-  <meta property="og:url" content="https://junaid0761.github.io/My-WON-Website/">
+  <meta property="og:url" content="https://junaid0761.github.io/">
   <meta property="og:image" content="profile.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
