@@ -598,18 +598,30 @@ header.scrolled{
 
 .project-top{
   height:170px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:3.2rem;
-  background:
-      radial-gradient(circle at 30% 30%,
-      rgba(53,214,255,.15),
-      transparent 40%),
-      #0a1727;
-  color:var(--accent);
+  position:relative;
+  overflow:hidden;
+  background:#0a1727;
 }
 
+.project-top img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  background:#ffffff;
+  transition:transform .5s ease, filter .5s ease;
+}
+.project-top img[src="restaurant.jpg"]{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+}
+
+.project-card:hover .project-top img{
+  transform:scale(1.06);
+  filter:brightness(.85);
+}
 .project-content{
   padding:22px;
   display:flex;
@@ -1795,8 +1807,8 @@ body.light .now-section{background:#e9f2f9}
       <article class="project-card reveal">
 
         <div class="project-top">
+          <img src="restaurant.jpg" alt="Restaurant Ordering System">
           <span class="project-status">In Development</span>
-          <i class="fa-solid fa-utensils"></i>
         </div>
 
         <div class="project-content">
@@ -1831,10 +1843,9 @@ body.light .now-section{background:#e9f2f9}
       <article class="project-card reveal">
 
         <div class="project-top">
-          <span class="project-status">Design Project</span>
-          <i class="fa-solid fa-briefcase"></i>
-        </div>
-
+         <img src="jobconnect.jpg" alt="JobConnect App">
+         <span class="project-status">Design Project</span>
+      </div>
         <div class="project-content">
 
           <h3>JobConnect App</h3>
@@ -1868,10 +1879,9 @@ body.light .now-section{background:#e9f2f9}
       <article class="project-card reveal">
 
         <div class="project-top">
-          <span class="project-status">Completed</span>
-          <i class="fa-solid fa-mobile-screen-button"></i>
-        </div>
-
+  <img src="android-security.jpg" alt="Android App Security Analysis">
+  <span class="project-status">Completed</span>
+</div>
         <div class="project-content">
 
           <h3>Android App Security Analysis</h3>
@@ -1909,9 +1919,9 @@ body.light .now-section{background:#e9f2f9}
       <article class="project-card reveal">
 
         <div class="project-top">
-          <span class="project-status">Completed</span>
-          <i class="fa-solid fa-building-columns"></i>
-        </div>
+  <img src="atm.jpg" alt="ATM Machine">
+  <span class="project-status">Completed</span>
+</div>
 
         <div class="project-content">
 
@@ -1949,10 +1959,9 @@ body.light .now-section{background:#e9f2f9}
       <article class="project-card reveal">
 
         <div class="project-top">
-          <span class="project-status">Completed</span>
-          <i class="fa-solid fa-circle-question"></i>
-        </div>
-
+  <img src="quiz.jpg" alt="Quiz Application">
+  <span class="project-status">Completed</span>
+</div>
         <div class="project-content">
 
           <h3>Quiz Application</h3>
@@ -1988,10 +1997,10 @@ body.light .now-section{background:#e9f2f9}
 
       <article class="project-card reveal">
 
-        <div class="project-top">
-          <span class="project-status">Completed</span>
-          <i class="fa-solid fa-cart-shopping"></i>
-        </div>
+       <div class="project-top">
+  <img src="ecommerce.jpg" alt="E-Commerce Project">
+  <span class="project-status">Completed</span>
+</div>
 
         <div class="project-content">
 
@@ -2062,7 +2071,7 @@ body.light .now-section{background:#e9f2f9}
       <!-- Replace these placeholders later -->
 
 
-      <div class="certificate-card reveal">
+    <div class="certificate-card reveal">
 
   <img src="certificate1.jpg"
        alt="Certificate"
@@ -2075,21 +2084,69 @@ body.light .now-section{background:#e9f2f9}
   </p>
     </div>
 
+<div class="certificate-card reveal">
 
-      <div class="certificate-card reveal">
+    <img src="certificate2.jpg"
+         alt="Google Connect and Protect Networks and Network Security Certificate"
+         class="certificate-img zoomable"
+         data-caption="Connect and Protect: Networks and Network Security">
 
-        <i class="fa-solid fa-award"></i>
+    <h3>Connect and Protect: Networks and Network Security</h3>
 
-        <h3>Certificate #02</h3>
+    <p>Issued by Google via Coursera</p>
 
-        <p>
-          This placeholder can later be replaced with one of your
-          professional certificates.
-        </p>
+</div>
 
-      </div>
+<div class="certificate-card reveal">
 
+    <img src="certificate3.jpg"
+         alt="Play It Safe: Manage Security Risks Certificate"
+         class="certificate-img zoomable"
+         data-caption="Play It Safe: Manage Security Risks">
 
+    <h3>Play It Safe: Manage Security Risks</h3>
+
+    <p>Issued by Google via Coursera</p>
+
+</div>
+<div class="certificate-card reveal">
+
+    <img src="certificate4.jpg"
+         alt="Python Basic Certificate of Accomplishment"
+         class="certificate-img zoomable"
+         data-caption="Python (Basic)">
+
+    <h3>Python (Basic)</h3>
+
+    <p>Issued by HackerRank</p>
+
+</div>
+
+<div class="certificate-card reveal">
+
+    <img src="certificate5.jpg"
+         alt="CSS Basic Certificate of Accomplishment"
+         class="certificate-img zoomable"
+         data-caption="CSS (Basic)">
+
+    <h3>CSS (Basic)</h3>
+
+    <p>Issued by HackerRank</p>
+
+</div>
+
+<div class="certificate-card reveal">
+
+    <img src="certificate6.jpg"
+         alt="JavaScript Basic Certificate of Accomplishment"
+         class="certificate-img zoomable"
+         data-caption="JavaScript (Basic)">
+
+    <h3>JavaScript (Basic)</h3>
+
+    <p>Issued by HackerRank</p>
+
+</div>
       <div class="certificate-card reveal">
 
         <i class="fa-solid fa-plus"></i>
@@ -2219,26 +2276,40 @@ body.light .now-section{background:#e9f2f9}
 
       <div class="gallery-item reveal">
          <img src="gallery1.jpg" alt="Bike Riding" class="zoomable" data-caption="Bike Riding">
-        <span>Bike Riding</span>
+        
     </div>
 
 
      <div class="gallery-item reveal">
         <img src="gallery2.jpg" alt="Shillong Trip" class="zoomable" data-caption="Shillong Trip">
-        <span>Shillong Trip</span>
+        
     </div>
+    
     <div class="gallery-item reveal">
-        <img src="gallery3.jpg" alt="Personal Memory" class="zoomable" data-caption="Personal Memory">
-        <span>Personal Memory</span>
-    </div>
+    <img src="gallery4.jpg"
+         alt="College Memories"
+         class="zoomable"
+         data-caption="College Memories">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="gallery5.jpg"
+         alt="Project Work"
+         class="zoomable"
+         data-caption="Project Work">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="gallery6.jpg"
+         alt="Travel Memories"
+         class="zoomable"
+         data-caption="Travel Memories">
+</div>
 
       <div class="gallery-item reveal">
-
-        <i class="fa-regular fa-image"></i>
-
+        <img src="gallery3.jpg" alt="Add Photo" class="zoomable" data-caption="Add Photo">
         <span>Add Photo</span>
-
-      </div>
+    </div>
 
 
     </div>
