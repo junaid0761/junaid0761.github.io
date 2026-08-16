@@ -24,8 +24,177 @@
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+        
 <style>
+  /* ===============================
+   SMOOTH SCROLLING
+================================ */
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+/* =======================================================
+   CONTACT FORM - POLISHED DESIGN
+======================================================= */
+
+.contact-form-wrap {
+    margin: 42px auto 0;
+    max-width: 850px;
+    padding: 32px;
+    background: rgba(8, 20, 38, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+}
+
+.contact-form-wrap h3 {
+    margin: 0 0 8px;
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+.contact-form-wrap > p {
+    margin: 0 auto 28px;
+    max-width: 650px;
+    text-align: center;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+
+/* FORM GRID */
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-field.full {
+    grid-column: 1 / -1;
+}
+
+
+/* LABEL */
+
+.form-field label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #e8eef8;
+}
+
+
+/* INPUT + TEXTAREA */
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.045);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.form-field input {
+    height: 50px;
+}
+
+.form-field textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+
+/* PLACEHOLDER */
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: #7f8da3;
+}
+
+
+/* FOCUS EFFECT */
+
+.form-field input:focus,
+.form-field textarea:focus {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 0 0 3px rgba(53, 214, 255, 0.10);
+}
+
+
+/* SEND BUTTON */
+
+.form-submit {
+    grid-column: 1 / -1;
+    justify-self: center;
+    min-width: 190px;
+    margin-top: 4px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 14px 24px;
+    border-radius: 12px;
+    transition: 0.25s ease;
+}
+
+.form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(53, 214, 255, 0.18);
+}
+
+.form-submit i {
+    margin-right: 8px;
+}
+
+
+/* =======================================================
+   CONTACT MOBILE
+======================================================= */
+
+@media (max-width: 700px) {
+
+    .contact-form-wrap {
+        margin-top: 30px;
+        padding: 22px 18px;
+        border-radius: 16px;
+    }
+
+    .contact-form-wrap h3 {
+        font-size: 1.4rem;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .form-field.full {
+        grid-column: auto;
+    }
+
+    .form-submit {
+        grid-column: auto;
+        width: 100%;
+    }
+
+}
 /* =========================================================
    GLOBAL
 ========================================================= */
@@ -996,7 +1165,6 @@ footer{
 .nav-links a{position:relative}.nav-links a::after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:2px;background:var(--accent);transition:.25s}.nav-links a:hover::after,.nav-links a.active::after{width:100%}
 ::selection{background:var(--accent);color:#04101b}
 @media(max-width:720px){.lightbox-nav{width:42px;height:42px}.lightbox-prev{left:8px}.lightbox-next{right:8px}.nav-links a::after{display:none}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
 
 /* =========================================================
@@ -1169,6 +1337,390 @@ body.light .now-section{background:#e9f2f9}
         transform:translateX(-50%);
         white-space:nowrap;
     }
+}
+/* =========================================================
+   FINAL MOBILE POLISH
+========================================================= */
+
+@media (max-width: 600px){
+
+    /* ---------- GENERAL ---------- */
+
+    section{
+        padding:60px 16px;
+    }
+
+    .container{
+        width:100%;
+        max-width:100%;
+        padding-left:16px;
+        padding-right:16px;
+    }
+
+
+    /* ---------- NAVBAR ---------- */
+
+    header{
+        padding:0;
+    }
+
+    .nav{
+        min-height:72px;
+    }
+
+    .logo{
+        font-size:1.7rem;
+    }
+
+    .menu-btn{
+        width:46px;
+        height:46px;
+        display:grid;
+        place-items:center;
+        border-radius:14px;
+    }
+
+    .nav-links{
+        top:72px;
+        left:16px;
+        right:16px;
+        width:auto;
+        padding:14px;
+        border-radius:18px;
+    }
+
+    .nav-links a{
+        padding:12px 14px;
+        border-radius:10px;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero{
+        padding-top:105px;
+        min-height:auto;
+    }
+
+    .hero-content{
+        width:100%;
+    }
+
+    .hello{
+        font-size:.9rem;
+    }
+
+    .hero h1{
+        font-size:clamp(2.6rem,11vw,3.8rem);
+        line-height:1.05;
+        margin:12px 0;
+    }
+
+    .hero-description{
+        font-size:.95rem;
+        line-height:1.7;
+        max-width:100%;
+    }
+
+    .hero-buttons{
+        width:100%;
+        gap:10px;
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .hero-buttons .btn{
+        width:100%;
+        justify-content:center;
+    }
+
+    .socials{
+        gap:10px;
+        margin-top:20px;
+    }
+
+
+    /* ---------- PROFILE IMAGE ---------- */
+
+    .hero-right{
+        width:100%;
+        margin-top:45px;
+        display:flex;
+        justify-content:center;
+    }
+
+    .profile-wrapper{
+        width:260px !important;
+        height:260px !important;
+        min-width:260px;
+        min-height:260px;
+        max-width:260px;
+        max-height:260px;
+    }
+
+    .profile-card{
+        width:260px !important;
+        height:260px !important;
+        padding:8px;
+        border-radius:50% !important;
+    }
+
+    .profile-inner{
+        width:100% !important;
+        height:100% !important;
+        border-radius:50% !important;
+    }
+
+    .profile-inner img{
+        width:100% !important;
+        height:100% !important;
+        object-fit:cover;
+        object-position:center 35%;
+        border-radius:50% !important;
+    }
+
+    .status-card{
+        left:50% !important;
+        bottom:-22px !important;
+        transform:translateX(-50%) !important;
+        font-size:.78rem;
+        padding:10px 13px;
+        white-space:nowrap;
+        z-index:5;
+    }
+
+
+    /* ---------- STATS ---------- */
+
+    .dashboard-grid{
+        grid-template-columns:1fr 1fr !important;
+        gap:12px;
+    }
+
+    .stat-card{
+        padding:20px 10px !important;
+        min-height:120px;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+
+    .stat-card strong{
+        font-size:2rem;
+    }
+
+    .stat-card span{
+        font-size:.82rem;
+        line-height:1.4;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-grid{
+        grid-template-columns:1fr !important;
+        gap:18px;
+    }
+
+    .about-card{
+        padding:24px 20px;
+    }
+
+
+    /* ---------- SKILLS ---------- */
+
+    .skills-grid{
+        grid-template-columns:1fr !important;
+        gap:14px;
+    }
+
+    .skill-card{
+        padding:20px;
+    }
+
+
+    /* ---------- PROJECTS ---------- */
+
+    .project-grid{
+        grid-template-columns:1fr !important;
+        gap:20px;
+    }
+
+    .project-card{
+        width:100%;
+    }
+
+    .project-top{
+        min-height:190px;
+    }
+
+    .project-content{
+        padding:22px 20px;
+    }
+
+    .project-content h3{
+        font-size:1.25rem;
+        line-height:1.3;
+    }
+
+    .project-content p{
+        font-size:.9rem;
+        line-height:1.7;
+    }
+
+    .tags{
+        gap:7px;
+    }
+
+    .tags span{
+        font-size:.72rem;
+        padding:7px 10px;
+    }
+
+
+    /* ---------- CERTIFICATES ---------- */
+
+    .certificate-grid{
+        grid-template-columns:1fr !important;
+        gap:20px;
+    }
+
+    .certificate-card{
+        width:100%;
+    }
+
+    .certificate-img{
+        width:100%;
+        height:auto;
+        max-height:240px;
+        object-fit:contain;
+    }
+
+
+    /* ---------- GALLERY ---------- */
+
+    .gallery-grid{
+        grid-template-columns:1fr !important;
+        gap:16px;
+    }
+
+    .gallery-item{
+        width:100%;
+        min-height:0;
+    }
+
+    .gallery-item img{
+        width:100%;
+        height:auto;
+        max-height:none;
+        object-fit:cover;
+    }
+
+
+    /* ---------- CONTACT ---------- */
+
+    .contact-box{
+        padding:30px 18px !important;
+        border-radius:20px;
+    }
+
+    .contact-box h2{
+        font-size:2rem;
+    }
+
+    .contact-links{
+        flex-direction:column;
+    }
+
+    .contact-links a{
+        width:100%;
+        justify-content:center;
+    }
+
+
+    /* ---------- FLOATING BUTTON ---------- */
+
+    .floating-contact{
+        right:16px;
+        bottom:75px;
+        width:48px;
+        height:48px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer-content{
+        gap:10px;
+        padding:0 10px;
+    }
+
+}
+/* =========================================================
+   SKILL PROGRESS BARS
+========================================================= */
+
+.skill-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.skill-level{
+    margin-top:18px;
+}
+
+.skill-level-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:7px;
+    font-size:.78rem;
+    color:var(--muted);
+}
+
+.skill-percent{
+    color:var(--accent);
+    font-weight:700;
+}
+
+.skill-bar{
+    width:100%;
+    height:7px;
+    background:rgba(255,255,255,.08);
+    border-radius:999px;
+    overflow:hidden;
+}
+
+.skill-progress{
+    height:100%;
+    width:0;
+    border-radius:999px;
+    background:linear-gradient(
+        90deg,
+        var(--accent),
+        var(--accent2)
+    );
+    transition:width 1.4s ease;
+}
+
+.skill-card.show .skill-progress{
+    width:var(--skill-width);
+}
+
+@media(max-width:600px){
+
+    .skill-level{
+        margin-top:15px;
+    }
+
+    .skill-bar{
+        height:6px;
+    }
+
+    .skill-level-top{
+        font-size:.75rem;
+    }
+
 }
 </style>
 
@@ -1633,6 +2185,18 @@ body.light .now-section{background:#e9f2f9}
         <p>
           HTML, CSS, JavaScript and responsive website development.
         </p>
+        <div class="skill-level">
+
+    <div class="skill-level-top">
+        <span>HTML & CSS</span>
+        <span class="skill-percent">85%</span>
+    </div>
+
+    <div class="skill-bar">
+        <div class="skill-progress" style="--skill-width:85%;"></div>
+    </div>
+
+</div>
 
       </div>
 
@@ -1646,6 +2210,30 @@ body.light .now-section{background:#e9f2f9}
         <p>
           Programming fundamentals, problem solving and application logic.
         </p>
+        <div class="skill-level">
+
+    <div class="skill-level-top">
+        <span>Python</span>
+        <span class="skill-percent">55%</span>
+    </div>
+
+    <div class="skill-bar">
+        <div class="skill-progress" style="--skill-width:55%;"></div>
+    </div>
+
+</div>
+        <div class="skill-level">
+
+    <div class="skill-level-top">
+        <span>JavaScript</span>
+        <span class="skill-percent">65%</span>
+    </div>
+
+    <div class="skill-bar">
+        <div class="skill-progress" style="--skill-width:65%;"></div>
+    </div>
+
+</div>
 
       </div>
 
@@ -1659,6 +2247,18 @@ body.light .now-section{background:#e9f2f9}
         <p>
           Mobile application security, static analysis and security concepts.
         </p>
+        <div class="skill-level">
+
+    <div class="skill-level-top">
+        <span>Cybersecurity</span>
+        <span class="skill-percent">70%</span>
+    </div>
+
+    <div class="skill-bar">
+        <div class="skill-progress" style="--skill-width:70%;"></div>
+    </div>
+
+</div>
 
       </div>
 
@@ -1672,6 +2272,18 @@ body.light .now-section{background:#e9f2f9}
         <p>
           Version control, repositories, GitHub Pages and project management.
         </p>
+        <div class="skill-level">
+
+    <div class="skill-level-top">
+        <span>Git & GitHub</span>
+        <span class="skill-percent">75%</span>
+    </div>
+
+    <div class="skill-bar">
+        <div class="skill-progress" style="--skill-width:75%;"></div>
+    </div>
+
+</div>
 
       </div>
 
@@ -1685,6 +2297,18 @@ body.light .now-section{background:#e9f2f9}
         <p>
           Database concepts and working with data-driven applications.
         </p>
+        <div class="skill-level">
+
+    <div class="skill-level-top">
+        <span>Databases</span>
+        <span class="skill-percent">65%</span>
+    </div>
+
+    <div class="skill-bar">
+        <div class="skill-progress" style="--skill-width:65%;"></div>
+    </div>
+
+</div>
 
       </div>
 
@@ -1698,6 +2322,18 @@ body.light .now-section{background:#e9f2f9}
         <p>
           Exploring Android application development and mobile technologies.
         </p>
+        <div class="skill-level">
+
+    <div class="skill-level-top">
+        <span>Android</span>
+        <span class="skill-percent">60%</span>
+    </div>
+
+    <div class="skill-bar">
+        <div class="skill-progress" style="--skill-width:60%;"></div>
+    </div>
+
+</div>
 
       </div>
 
@@ -1711,6 +2347,18 @@ body.light .now-section{background:#e9f2f9}
         <p>
           Linux fundamentals and security-oriented environments such as Kali Linux.
         </p>
+        <div class="skill-level">
+
+    <div class="skill-level-top">
+        <span>Linux</span>
+        <span class="skill-percent">60%</span>
+    </div>
+
+    <div class="skill-bar">
+        <div class="skill-progress" style="--skill-width:60%;"></div>
+    </div>
+
+</div>
 
       </div>
 
@@ -1724,6 +2372,18 @@ body.light .now-section{background:#e9f2f9}
         <p>
           Exploring tools such as MobSF, Burp Suite and APK analysis utilities.
         </p>
+        <div class="skill-level">
+
+    <div class="skill-level-top">
+        <span>Security Tools</span>
+        <span class="skill-percent">70%</span>
+    </div>
+
+    <div class="skill-bar">
+        <div class="skill-progress" style="--skill-width:70%;"></div>
+    </div>
+
+</div>
 
       </div>
 
@@ -2391,7 +3051,109 @@ body.light .now-section{background:#e9f2f9}
         </a>
 
 
-      </div>
+    </div>
+
+
+    <!-- =======================================================
+         CONTACT FORM - FORMSPREE
+    ======================================================== -->
+
+    <div class="contact-form-wrap reveal" id="messageMe">
+
+      <h3>Send Me a Message</h3>
+
+      <p>
+        Have a question or want to work together?
+        Send me a message and I'll get back to you.
+      </p>
+
+
+      <form
+        class="contact-form"
+        id="contactForm"
+        action="https://formspree.io/f/mljrwwjk"
+        method="POST">
+
+
+        <div class="form-field">
+
+          <label for="visitorName">
+            Your Name
+          </label>
+
+          <input
+            id="visitorName"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+            placeholder="Your name">
+
+        </div>
+
+
+        <div class="form-field">
+
+          <label for="visitorEmail">
+            Your Email
+          </label>
+
+          <input
+            id="visitorEmail"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            placeholder="you@example.com">
+
+        </div>
+
+
+        <div class="form-field full">
+
+          <label for="visitorSubject">
+            Subject
+          </label>
+
+          <input
+            id="visitorSubject"
+            name="subject"
+            type="text"
+            required
+            placeholder="Portfolio enquiry">
+
+        </div>
+
+
+        <div class="form-field full">
+
+          <label for="visitorMessage">
+            Message
+          </label>
+
+          <textarea
+            id="visitorMessage"
+            name="message"
+            required
+            placeholder="Write your message..."></textarea>
+
+        </div>
+
+
+        <button
+          class="btn-primary form-submit"
+          type="submit">
+
+          <i class="fa-solid fa-paper-plane"></i>
+          Send Message
+
+        </button>
+
+
+      </form>
+
+    </div>
+
 
     </div>
 
