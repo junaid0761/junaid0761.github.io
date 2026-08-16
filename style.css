@@ -498,7 +498,7 @@ header.scrolled{
     background: linear-gradient(
         145deg,
         #00ff66,
-        #00c853,
+        #ff3333,
         #07150d
     );
 
@@ -5977,7 +5977,7 @@ header.scrolled {
         linear-gradient(
             90deg,
             #00ff66,
-            #00eaff
+            #ff3333
         ) !important;
 
     box-shadow:
@@ -7374,7 +7374,7 @@ header.scrolled {
 
 .system-info {
     position: absolute;
-    right: -20px;
+    right: -60px;
     top: 150px;
     width: 175px;
     padding: 14px;
@@ -7385,15 +7385,44 @@ header.scrolled {
     font-family: "Courier New", monospace;
     z-index: 10;
 }
+/* FORCE SYSTEM INFO TO RIGHT */
+/* SYSTEM INFO - DESKTOP RIGHT */
+.profile-hud .system-info {
+    position: absolute !important;
+    right: -120px !important;
+    left: auto !important;
+    top: 50px !important;
+    transform: none !important;
+    z-index: 50 !important;
+}
 
+/* MOBILE - KEEP EVERYTHING INSIDE SCREEN */
+@media (max-width: 720px) {
+    .profile-hud .system-info {
+        right: 0 !important;
+        left: auto !important;
+        top: 180px !important;
+        transform: none !important;
+        width: 260px !important;
+        box-sizing: border-box !important;
+    }
+
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+}
 .system-info-head {
-    color: #00ff66;
+    color: #ff3333 !important;
     border-bottom: 1px solid rgba(0, 255, 102, 0.25);
     padding-bottom: 8px;
     margin-bottom: 12px;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     letter-spacing: 1px;
 }
+
 
 .system-line {
     display: flex;
@@ -9549,4 +9578,233 @@ footer,
     height: 48px !important;
 
     z-index: 99999 !important;
+}
+/* PROJECT IMAGES - BLACK BACKGROUND */
+.project-card .project-image,
+.project-card .project-img,
+.project-card .project-media,
+.project-card .image-wrapper {
+    background: #000 !important;
+}
+
+/* Actual image area */
+.project-card img {
+    background: #000 !important;
+}
+/* ================================
+   LIGHTBOX MOBILE SCROLL FIX
+================================ */
+
+.lightbox {
+  touch-action: auto !important;
+  overscroll-behavior: contain;
+}
+
+.lightbox.open {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lightbox img {
+  max-width: 92vw;
+  max-height: 86vh;
+  object-fit: contain;
+}
+/* ================================
+   FULLSCREEN IMAGE LIGHTBOX
+================================ */
+
+.lightbox {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.96) !important;
+    backdrop-filter: blur(8px);
+
+    z-index: 99999 !important;
+    padding: 20px !important;
+    box-sizing: border-box;
+}
+
+.lightbox.open {
+    display: flex !important;
+}
+
+.lightbox img {
+    display: block !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    max-width: 95vw !important;
+    max-height: 90vh !important;
+
+    object-fit: contain !important;
+    border-radius: 8px;
+
+    box-shadow: 0 0 50px rgba(0, 255, 100, 0.25);
+}
+
+/* Close button */
+.lightbox-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+
+    z-index: 100000 !important;
+}
+
+/* Previous / Next */
+.lightbox-prev {
+    position: fixed !important;
+    left: 20px !important;
+    z-index: 100000 !important;
+}
+
+.lightbox-next {
+    position: fixed !important;
+    right: 20px !important;
+    z-index: 100000 !important;
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+
+    .lightbox {
+        padding: 10px !important;
+    }
+
+    .lightbox img {
+        max-width: 96vw !important;
+        max-height: 88vh !important;
+        border-radius: 5px;
+    }
+
+    .lightbox-close {
+        top: 12px !important;
+        right: 12px !important;
+    }
+
+    .lightbox-prev {
+        left: 8px !important;
+    }
+
+    .lightbox-next {
+        right: 8px !important;
+    }
+}
+.footer-message h3 {
+    color: #ff3333 !important;
+}
+
+.footer-message h3 span {
+    color: #ff3333 !important;
+}
+/* =========================================================
+   FINAL LIGHT / DARK MODE FIX
+========================================================= */
+
+/* DARK MODE - DEFAULT */
+body {
+    background: #000 !important;
+    color: #d8e5df;
+}
+
+/* LIGHT MODE */
+body.light {
+    background: #f4f7f6 !important;
+    color: #18201d !important;
+}
+
+/* ---------- LIGHT MODE CARDS ---------- */
+
+body.light .skill-card,
+body.light .project-card,
+body.light .certificate-card,
+body.light .system-info,
+body.light .status-card,
+body.light .footer-message,
+body.light .terminal {
+    background: #ffffff !important;
+    color: #18201d !important;
+    border-color: rgba(0, 120, 55, 0.35) !important;
+}
+
+/* ---------- LIGHT MODE TEXT ---------- */
+
+body.light p,
+body.light li,
+body.light .hero-description,
+body.light .description {
+    color: #53615b !important;
+}
+
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4,
+body.light strong {
+    color: #18201d !important;
+}
+
+/* ---------- LIGHT MODE NAVBAR ---------- */
+
+body.light header,
+body.light nav {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #18201d !important;
+}
+
+/* ---------- LIGHT MODE INPUTS ---------- */
+
+body.light input,
+body.light textarea,
+body.light select {
+    background: #ffffff !important;
+    color: #18201d !important;
+    border-color: rgba(0, 120, 55, 0.35) !important;
+}
+
+/* ---------- LIGHT MODE TERMINAL ---------- */
+
+body.light .terminal-boot p {
+    color: #c62828 !important;
+}
+
+/* ---------- LIGHT MODE CYBER BACKGROUND ---------- */
+
+body.light .cyber-bg {
+    opacity: 0.12 !important;
+}
+
+/* ---------- DARK MODE CYBER BACKGROUND ---------- */
+
+body:not(.light) .cyber-bg {
+    opacity: 1 !important;
+}
+
+/* ---------- LIGHT MODE BUTTON ---------- */
+
+body.light .btn-outline {
+    color: #18201d !important;
+}
+
+/* ---------- LIGHT MODE SYSTEM INFO ---------- */
+
+body.light .system-info {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #18201d !important;
+}
+
+/* ---------- LIGHT MODE FOOTER ---------- */
+
+body.light .footer-message {
+    background: #ffffff !important;
+    color: #18201d !important;
 }

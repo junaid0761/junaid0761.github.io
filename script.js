@@ -269,8 +269,8 @@ function openLightbox(index){
     "false"
   );
 
-  document.body.style.overflow =
-    "hidden";
+  document.body.style.overflow = "";
+document.documentElement.style.overflow = "";
 
 }
 
@@ -286,7 +286,7 @@ function closeLightbox(){
 
   document.body.style.overflow =
     "";
-
+document.documentElement.style.overflow = "";
 }
 
 
